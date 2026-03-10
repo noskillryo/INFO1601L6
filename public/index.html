@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
 </head>
 <body>
-    
+    <span id="result">Original content</span>
+
     <script>
-        //get client data using navigator
-        console.log(window.navigator.cookieEnabled);
-        console.log(window.navigator.onLine);
-        console.log(navigator.appVersion);
-        console.log(navigator.userAgent)
-        console.log(navigator.platform);
+        const result = document.querySelector('#result');
+      
+        console.log("Element:", result);
+      
+        result.innerHTML = '<h2>My Span</h2>';
 
-        //get window metadata using window
-        console.log(window.location.href);
-        console.log(window.location.protocol);
-        console.log(window.location.hostname);
+        result.style.color = 'blue';
+        result.style.backgroundColor = 'lightgrey';
 
-        function redirect(url){
-          window.location.assign(url);
-        }
-
-        window.onload = function(event){
-           console.log("Page has loaded");
-           //do other javascript stuff here
-        }
+        console.log("ID attribute:", result.getAttribute('id'));
+ 
+        result.classList.add('content');
+        console.log("Classes after adding:", result.className);
+ 
+        setTimeout(() => {
+            result.removeAttribute('id');
+            console.log("ID after removal:", result.getAttribute('id'));
+        }, 2000);
     </script>
 </body>
 </html>
